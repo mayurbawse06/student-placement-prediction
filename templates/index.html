@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Placement Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+  <h1>Student Placement Prediction System</h1>
+  <p class="subtitle">Machine Learning based placement prediction</p>
+  <form method="POST">
+    {% for name, label, step in [
+      ("cgpa","CGPA","0.01"),("tenth_percentage","10th Percentage","0.1"),
+      ("twelfth_percentage","12th Percentage","0.1"),("backlogs","Backlogs","1"),
+      ("internships","Internships","1"),("projects","Projects","1"),
+      ("coding_score","Coding Score","1"),("aptitude_score","Aptitude Score","1"),
+      ("communication_score","Communication Score","1"),("attendance","Attendance %","0.1"),
+      ("certifications","Certifications","1")
+    ] %}
+    <label>{{ label }}</label>
+    <input type="number" name="{{ name }}" step="{{ step }}" required>
+    {% endfor %}
+    <button type="submit">Predict Placement</button>
+  </form>
+  {% if result %}
+  <div class="result">
+    <h2>{{ result }}</h2>
+    <p>Estimated placement probability: <strong>{{ probability }}%</strong></p>
+  </div>
+  {% endif %}
+  <p class="note">Demo dataset is synthetic and intended for academic demonstration.</p>
+</div>
+</body>
+</html>
