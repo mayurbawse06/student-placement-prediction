@@ -1,43 +1,46 @@
-# Student Placement Prediction System
+# 🎓 Student Placement Prediction System
 
-A machine-learning web application that predicts whether a student is likely to be placed based on academic performance, skills, internships, projects, attendance, and certifications.
+A Machine Learning based web application that predicts whether a student is likely to be placed based on academic performance, technical skills, internships, projects, attendance, and certifications.
 
-## Tech Stack
-- Python
-- Pandas
-- Scikit-learn
-- Random Forest Classifier
-- Flask
-- HTML/CSS
+## 📌 Project Overview
 
-## Features
-- Placement classification: Placed / Not Placed
-- Placement probability
-- Simple web interface
-- Reproducible model-training script
+The Student Placement Prediction System uses Machine Learning to analyze student-related features and predict:
 
-## Project Structure
+- ✅ Placed
+- ❌ Not Placed
+- 📊 Estimated placement probability
+
+The system provides a simple web interface where users can enter student details and receive an instant prediction.
+
+## 🎯 Objectives
+
+- Predict student placement outcomes using Machine Learning.
+- Analyze academic and skill-related factors.
+- Provide an easy-to-use prediction interface.
+- Demonstrate integration of Machine Learning with Flask.
+- Create a reproducible end-to-end ML application.
+
+## 🧠 Machine Learning Approach
+
+The project uses a **Random Forest Classifier** for binary classification.
+
+### Workflow
+
 ```text
-student-placement-prediction/
-├── data/placement_data.csv
-├── model/placement_model.pkl
-├── src/train_model.py
-├── templates/index.html
-├── static/style.css
-├── static/script.js
-├── app.py
-├── requirements.txt
-└── README.md
-```
-
-## Run Locally
-```bash
-pip install -r requirements.txt
-python src/train_model.py
-python app.py
-```
-
-Open `http://127.0.0.1:5000`.
-
-## Dataset Note
-The included dataset is **synthetic**, created for academic/demo purposes. It should not be presented as real institutional placement data.
+Student Data
+     ↓
+Data Preprocessing
+     ↓
+Feature Selection
+     ↓
+Train/Test Split
+     ↓
+Random Forest Classifier
+     ↓
+Model Evaluation
+     ↓
+Saved ML Model
+     ↓
+Flask Web Application
+     ↓
+Placement Prediction
